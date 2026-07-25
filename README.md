@@ -1,7 +1,14 @@
 # Ordnance Survey Grid Refs in Golang
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/paulcager/osgridref.svg)](https://pkg.go.dev/github.com/paulcager/osgridref)
-[![Go Report Card](https://goreportcard.com/badge/github.com/paulcager/osgridref)](https://goreportcard.com/report/github.com/paulcager/osgridref)
+This version forked, on 25 July 2026, from https://github.com/paulcager/osgridref/tree/v1.3.0
+
+Changes planned:
+- Store the precision of the original grid ref, and then change String() to honour that precision.
+  For example, input "SU1234" has 'precision' 4 -- four digits in the numeric part (two digits in each direction), equivalent to
+  a square with 10km sides.
+  `gr.String()` will return "SU1234" rather than the old default of "SU12345678". 
+Changes made:
+- ...
 
 A Golang package to convert between Ordnance Survey (OS) Grid References and Latitude/Longitude coordinates. OS Grid
 references are traditionally used in UK navigation, while lat/lon is used by GPS systems and global mapping systems.
@@ -26,7 +33,7 @@ excellent [JavaScript geodesy library](https://github.com/chrisveness/geodesy) b
 ## Installation
 
 ```bash
-go get github.com/paulcager/osgridref
+go get github.com/StarsoftAnalysis/osgridref
 ```
 
 ## Quick Start
@@ -38,7 +45,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/paulcager/osgridref"
+	"github.com/StarsoftAnalysis/osgridref"
 )
 
 func main() {
@@ -61,7 +68,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/paulcager/osgridref"
+	"github.com/StarsoftAnalysis/osgridref"
 )
 
 func main() {
@@ -253,7 +260,7 @@ Contributions are welcome! Please note:
 - Code style intentionally mirrors JavaScript - see "Why doesn't the code look like idiomatic Go?" above
 - Please add tests for any new functionality
 
-For bug reports or feature requests, please [open an issue](https://github.com/paulcager/osgridref/issues).
+For bug reports or feature requests, please [open an issue](https://github.com/StarsoftAnalysis/osgridref/issues).
 
 ## Acknowledgements
 
